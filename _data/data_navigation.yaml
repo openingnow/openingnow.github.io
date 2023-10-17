@@ -1,0 +1,12 @@
+- name: 전체 글
+  link: /archive
+- name: <br>
+  link: 
+- name: Programming
+  link: /programming
+- name: Motorcycle
+  link: /motorcycle
+- name: Medicine
+  link: /medicine
+- name: Diary
+  link: /diary

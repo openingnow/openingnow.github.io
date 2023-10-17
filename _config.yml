@@ -1,0 +1,6 @@
+title: "opng :: Blog"
+description: 컴퓨터, 오두바이, 의학
+
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
+    hard_wrap   : true

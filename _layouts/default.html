@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>{{ site.title }} - {{ page.title }}</title>
+
+	<!-- {1% seo %1} -->
+	<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+	<script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154765231-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-154765231-1');
+	</script>
+	<meta name="google-site-verification" content="iS_zqedc8dgk3KZMB_YvIsZ2ju1zsy1Fb7CeRiEO7F4" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<a href="/">
+				<h1 class="header">{{ site.title }}</h1>
+			</a>
+			<p class="header">{{ site.description }}</p>
+
+			<ul>
+				<li><a class="buttons github" href="{{ site.github.owner_url }}">GitHub Profile</a></li>
+			</ul>
+			<br>
+
+			{% for item in site.data.data_navigation %}
+			<a href="{{ item.link }}">{{ item.name }}</a>
+			<br>
+			{% endfor %}
+		</header>
+
+		<section>
+			{{ content }}
+		</section>
+
+		<footer>
+			<p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> based on <a href="https://github.com/pages-themes/dinky">Dinky theme</a></small></p>
+		</footer>
+	</div>
+</body>
+
+</html>
