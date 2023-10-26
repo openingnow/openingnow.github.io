@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thermometer</title>
+</head>
+
+<body>
+    <br><br><br><br><br><br><br><br><br>
+    <svg viewBox="30 26 220 530" height="600px" id="thermometer" xmlns="http://www.w3.org/2000/svg">
+        <rect rx="20" id="outermost_column" height="500" width="60" y="28" x="120" fill="#000" />
+        <circle r="50" id="outermost_circle" cy="500" cx="150" fill="#000" />
+        <rect rx="13" id="white_column" height="500" width="44" y="38" x="128" fill="#fff" />
+        <circle r="42" id="white_circle" cy="500" cx="150" fill="#fff" />
+        <rect rx="9" id="filled_column" height="430" width="30" y="47" x="135" fill="url(#Gradient2)" />
+        <circle r="34" id="filled_circle" cy="500" cx="150" fill="#66ff33" />
+        <rect rx="9" id="unfilled_column_top" height="10" width="30" y="46" x="135" fill="#aaa" />
+        <rect id="unfilled_column" height="225" width="30" y="50" x="135" fill="#aaa" />
+        <rect stroke="#000" id="10.0" height="2" width="20" y="79" x="200" fill="#000" />
+        <text x="227" y="86" id="thermo_label_10" class="thermometer_label">10</text>
+        <rect stroke="#000" id="09.5" height="2" width="10" y="97" x="200" fill="#000" />
+        <rect stroke="#000" id="09.0" height="2" width="20" y="116" x="200" fill="#000" />
+        <text x="235" y="122" id="thermo_label_9" class="thermometer_label">9</text>
+        <rect stroke="#000" id="08.5" height="2" width="10" y="134" x="200" fill="#000" />
+        <rect stroke="#000" id="08.0" height="2" width="20" y="152" x="200" fill="#000" />
+        <text x="235" y="158" id="thermo_label_8" class="thermometer_label">8</text>
+        <rect stroke="#000" id="07.5" height="2" width="10" y="170" x="200" fill="#000" />
+        <rect stroke="#000" id="07.0" height="2" width="20" y="188" x="200" fill="#000" />
+        <text x="235" y="194" id="thermo_label_7" class="thermometer_label">7</text>
+        <rect stroke="#000" id="06.5" height="2" width="10" y="206" x="200" fill="#000" />
+        <rect stroke="#000" id="06.0" height="2" width="20" y="224" x="200" fill="#000" />
+        <text x="235" y="230" id="thermo_label_6" class="thermometer_label">6</text>
+        <rect stroke="#000" id="05.5" height="2" width="10" y="242" x="200" fill="#000" />
+        <rect stroke="#000" id="05.0" height="2" width="20" y="260" x="200" fill="#000" />
+        <text x="235" y="266" id="thermo_label_5" class="thermometer_label">5</text>
+        <rect stroke="#000" id="04.5" height="2" width="10" y="278" x="200" fill="#000" />
+        <rect stroke="#000" id="04.0" height="2" width="20" y="295" x="200" fill="#000" />
+        <text x="235" y="302" id="thermo_label_4" class="thermometer_label">4</text>
+        <rect stroke="#000" id="03.5" height="2" width="10" y="314" x="200" fill="#000" />
+        <rect stroke="#000" id="03.0" height="2" width="20" y="331" x="200" fill="#000" />
+        <text x="235" y="338" id="thermo_label_3" class="thermometer_label">3</text>
+        <rect stroke="#000" id="02.5" height="2" width="10" y="349" x="200" fill="#000" />
+        <rect stroke="#000" id="02.0" height="2" width="20" y="367" x="200" fill="#000" />
+        <text x="235" y="374" id="thermo_label_2" class="thermometer_label">2</text>
+        <rect stroke="#000" id="01.5" height="2" width="10" y="385" x="200" fill="#000" />
+        <rect stroke="#000" id="01.0" height="2" width="20" y="403" x="200" fill="#000" />
+        <text x="235" y="410" id="thermo_label_1" class="thermometer_label">1</text>
+        <rect stroke="#000" id="00.5" height="2" width="10" y="421" x="200" fill="#000" />
+        <rect stroke="#000" id="00.0" height="2" width="20" y="439" x="200" fill="#000" />
+        <text x="235" y="444" id="thermo_label_0" class="thermometer_label">0</text>
+
+        <g id="dragger" transform="translate(50 245)">
+            <circle r="25" cx="5" cy="30" id="dragger_circle" />
+            <polygon points="22,22 40,30 22,38" />
+            <text id="dragger_text" x="-8" y="37" fill="#FFF" stroke="#FFF" font-size="20px"></text>
+        </g>
+        <rect id="input_column" height="500" width="70" y="5" x="115" opacity="00%" />
+
+        <defs>
+            <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="20%" stop-color="red" />
+                <stop offset="50%" stop-color="yellow" />
+                <stop offset="60%" stop-color="yellow" />
+                <stop offset="100%" stop-color="#66ff33" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script>
+        const update_level = pageY => {
+            const thm = document.getElementById("thermometer");
+            const page_top_to_svg = thm.getBoundingClientRect().top + document.body.scrollTop; // https://stackoverflow.com/a/46769743
+            const viewBox_y = thm.viewBox.baseVal.y;
+            const viewBox_height = thm.viewBox.baseVal.height;
+            const real_height = thm.height.baseVal.value;
+            const magnification_ratio = real_height / viewBox_height;
+            // pageY == page_top_to_svg - viewBox_y*magnification_ratio + y*magnification_ratio
+            const y_in_svg = (pageY - page_top_to_svg + viewBox_y * magnification_ratio) / magnification_ratio;
+            const y_min = document.getElementById("10.0").y.baseVal.value + document.getElementById("10.0").height.baseVal.value / 2;
+            const y_max = document.getElementById("00.0").y.baseVal.value + document.getElementById("00.0").height.baseVal.value / 2;
+            const y_clamped = Math.min(Math.max(y_min, y_in_svg), y_max);
+            document.getElementById("unfilled_column").height.baseVal.value = y_clamped - document.getElementById("unfilled_column").y.baseVal.value;
+            document.getElementById("dragger").transform.baseVal[0].matrix.f = y_clamped - document.getElementById("dragger_circle").cy.baseVal.value;
+            const score = (y_max - y_clamped) / (y_max - y_min) * 10;
+            let score_str = "";
+            if (score === 10)
+                score_str = "10";
+            else {
+                const rounded = "" + Math.round(score * 10) / 10
+                score_str = rounded
+                if (/^[0-9]$/.test(rounded))
+                    score_str += ".0"
+            }
+            document.getElementById("dragger_text").innerHTML = score_str;
+        };
+
+        const input_column = document.getElementById("input_column");
+        
+        input_column.onclick = e => update_level(e.pageY);
+        input_column.onmousedown = _ => mouse_down = true;
+        input_column.onmousemove = e => { if (mouse_down) update_level(e.pageY) };
+        input_column.onmouseup = _ => mouse_down = false;
+        input_column.ontouchmove = e => update_level(e.targetTouches[0].pageY);
+    </script>
+</body>
+
+<style>
+    .thermometer_label {
+        font-weight: bold;
+        font-size: 16px;
+        font-family: sans-serif;
+    }
+
+    .thermometer_label::selection {
+        opacity: 0%;
+    }
+
+    #dragger_text::selection {
+        opacity: 0%;
+    }
+</style>
+
+</html>
