@@ -1,0 +1,10 @@
+title: "opng :: Blog"
+
+url: "https://openingnow.github.io"
+
+plugins:
+    - jekyll-sitemap
+
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
+    hard_wrap   : true
