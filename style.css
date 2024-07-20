@@ -94,6 +94,9 @@ table {
 /*
 현재 깃허브 웹페이지의 CSS를 구현한 것 https://github.com/sindresorhus/github-markdown-css/blob/main/github-markdown-dark.css
 https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks#syntax-highlighting
+Prettylights
+
+
 */
 
 .highlight { background-color: #f8f8f8; }
