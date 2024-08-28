@@ -1,0 +1,91 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+    <line stroke="#efd6ae" stroke-width="5" x1="50" y1="250" x2="200" y2="90" />
+    <line stroke="#efd6ae" stroke-width="5" x1="196" y1="90" x2="255" y2="145" />
+    <line stroke="#efd6ae" stroke-width="5" x1="200" y1="175" x2="255" y2="145" />
+    <text x="205" y="147" fill="#efd6ae">29-1</text>
+    <line stroke="#ff842e" stroke-width="5" x1="200" y1="185" x2="415" y2="80" />
+    <text x="420" y="85" fill="#ff842e">23</text>
+    <line stroke="#8a3900" stroke-width="5" x1="200" y1="195" x2="325" y2="135" />
+    <text x="327" y="143" fill="#8a3900">20,21,22</text>
+
+
+    <line stroke="#5b694a" stroke-width="5" x1="200" y1="212" x2="640" y2="151" />
+    <text x="620" y="144" fill="#5b694a">50,51,52,53</text>
+    <line stroke="#aee36d" stroke-width="5" x1="200" y1="220" x2="800" y2="137" />
+    <text x="776" y="110" fill="#aee36d">59(임기경유),</text>
+    <text x="776" y="130" fill="#aee36d">71(임기경유)</text>
+    <line stroke="#6a8a43" stroke-width="5" x1="200" y1="228" x2="947" y2="125" />
+    <text x="950" y="126" fill="#6a8a43">57</text>
+    <line stroke="#465c2c" stroke-width="5" x1="600" y1="181" x2="947" y2="133" />
+    <text x="950" y="143" fill="#465c2c">58</text>
+    <line stroke="#689c2a" stroke-width="5" x1="600" y1="189" x2="800" y2="161" />
+    <text x="784" y="180" fill="#689c2a">61,72(임기경유)</text>
+
+
+    <line stroke="#aaaaaa" stroke-width="5" x1="50" y1="245" x2="250" y2="245" />
+    <text x="253" y="250" fill="#aaaaaa">33,632</text>
+
+
+    <line stroke="#806385" stroke-width="5" x1="200" y1="257" x2="500" y2="308" />
+    <line stroke="#806385" stroke-width="5" x1="505" y1="308" x2="595" y2="175" />
+    <text x="325" y="265" fill="#806385">14 봉화->봉성->명호->춘양</text>
+    <line stroke="#3dff67" stroke-width="5" x1="515" y1="308" x2="605" y2="175" />
+    <text x="550" y="272" fill="#3dff67">68</text>
+    <line stroke="#224270" stroke-width="5" x1="650" y1="360" x2="605" y2="175" />
+    <text x="630" y="272" fill="#224270">70</text>
+
+
+    <line stroke="#48d1ff" stroke-width="5" x1="200" y1="265" x2="700" y2="350" />
+    <text x="700" y="352" fill="#48d1ff">10,11,12,13</text>
+    <line stroke="#3871ff" stroke-width="5" x1="200" y1="281" x2="540" y2="339" />
+    <text x="540" y="346" fill="#3871ff">15,16</text>
+    <line stroke="#38714f" stroke-width="5" x1="200" y1="289" x2="390" y2="321" />
+    <text x="354" y="342" fill="#38714f">18(거촌경유),36</text>
+
+
+    <line stroke="#f25cc3" stroke-width="5" x1="200" y1="297" x2="350" y2="323" />
+    <line stroke="#f25cc3" stroke-width="5" x1="340" y1="323" x2="270" y2="460" />
+    <line stroke="#f25cc3" stroke-width="5" x1="200" y1="290" x2="270" y2="460" />
+    <text x="314" y="390" fill="#f25cc3">37 11:35 봉화->봉성->상운->봉화</text>
+    <text x="314" y="410" fill="#f25cc3">37 16:00 봉화->상운->봉성->봉화</text>
+
+
+    <line stroke="#3d0045" stroke-width="5" x1="200" y1="310" x2="290" y2="530" />
+    <text x="295" y="535" fill="#3d0045">26,27,28,35</text>
+    <line stroke="#cda8ff" stroke-width="5" x1="50" y1="250" x2="300" y2="500" />
+    <text x="302" y="505" fill="#cda8ff">232</text>
+
+
+    <circle cx="50" cy="250" r="30" fill="#777777" stroke="white" stroke-width="5" />
+    <text x="50" y="254" text-anchor="middle" font-size="13px" fill="white">영주여객</text>
+    <rect x="170" y="160" rx="30" width="60" height="180" stroke="white" stroke-width="5" />
+    <text x="200" y="254" text-anchor="middle" fill="white">봉화</text>
+
+
+    <circle cx="275" cy="145" r="30" stroke="white" stroke-width="5" />
+    <text x="275" y="150" text-anchor="middle" fill="white">물야</text>
+    <circle cx="370" cy="100" r="30" fill="#777777" stroke="white" stroke-width="5" />
+    <text x="370" y="105" text-anchor="middle" fill="white">부석</text>
+
+
+    <circle cx="430" cy="190" r="30" stroke="white" stroke-width="5" />
+    <text x="430" y="195" text-anchor="middle" fill="white">법전</text>
+    <circle cx="600" cy="170" r="30" stroke="white" stroke-width="5" />
+    <text x="600" y="175" text-anchor="middle" fill="white">춘양</text>
+    <circle cx="750" cy="147" r="30" stroke="white" stroke-width="5" />
+    <text x="750" y="152" text-anchor="middle" fill="white">소천</text>
+    <circle cx="900" cy="130" r="30" stroke="white" stroke-width="5" />
+    <text x="900" y="135" text-anchor="middle" fill="white">석포</text>
+
+
+    <circle cx="350" cy="300" r="30" stroke="white" stroke-width="5" />
+    <text x="350" y="305" text-anchor="middle" fill="white">봉성</text>
+    <circle cx="500" cy="325" r="30" stroke="white" stroke-width="5" />
+    <text x="500" y="330" text-anchor="middle" fill="white">명호</text>
+    <circle cx="650" cy="350" r="30" stroke="white" stroke-width="5" />
+    <text x="650" y="355" text-anchor="middle" fill="white">재산</text>
+
+
+    <circle cx="270" cy="470" r="30" stroke="white" stroke-width="5" />
+    <text x="270" y="475" text-anchor="middle" fill="white">상운</text>
+</svg>
