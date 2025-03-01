@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doc</title>
+</head>
+
+
+<body>
+  <textarea id="i">1 1 3</textarea>
+  <a id="d">download: 우클릭>다른이름으로 저장</a>
+  <div id="o"></div>
+</body>
+
+<script>
+  const cxy = 102;
+  const cr = 100;
+
+  const input_elem = document.querySelector('#i');
+  const output_elem = document.querySelector('#o');
+  const foo = _ => {
+    const numerators = input_elem.value.trim().split(" ").map(s => +s);
+    const denominator = numerators.reduce((s, x) => s + x, 0)
+    const each_degrees = numerators.map(x => 360 * x / denominator);
+    const accum_degrees = each_degrees.map((acc => x => acc += x)(0));
+    const split_lines =
+      accum_degrees
+        .map(deg => `<line x1="${cxy}" y1="${cxy}" x2="${cxy}" y2="${cxy - cr}" stroke="#000" stroke-width="2" transform="rotate(${deg},${cxy},${cxy})"/>`);
+
+    let rationals = "";
+    for (let i = 0; i < numerators.length; i++) {
+      const deg = [0, ...accum_degrees][i] + each_degrees[i] / 2
+      const x = cxy + 0.5 * cr * Math.sin(deg * Math.PI / 180) - 5;
+      const y = cxy - 0.5 * cr * Math.cos(deg * Math.PI / 180) - 15;
+
+      const numerator = numerators[i];
+      const g = gcd(numerator, denominator);
+
+      rationals += `<text x="${x}" y="${y}" font-size="30" font-family="SidaeAi-Regular">${numerator / g}</text>\n`
+      rationals += `<line x1="${x - 1}" y1="${y + 4}" x2="${x + 17}" y2="${y + 4}" stroke="#000" stroke-width="1"/>\n`
+      rationals += `<text x="${x}" y="${y + 30}" font-size="30" font-family="SidaeAi-Regular">${denominator / g}</text>\n`
+    }
+
+    const svg = `<svg width="204" height="204" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="${cxy}" cy="${cxy}" r="1" stroke="#000" fill="#000" stroke-width="0"/>
+  <circle cx="${cxy}" cy="${cxy}" r="${cr}" stroke="#000" fill="#fff" stroke-width="2"/>
+  ${split_lines.join("\n")}
+  
+  ${rationals}
+</svg>`;
+
+    o.innerHTML = svg;
+    document.getElementById("d").href = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+  }
+  input_elem.oninput = foo;
+  foo();
+
+  function gcd(a, b) {
+    if (b) {
+      return gcd(b, a % b);
+    } else {
+      return Math.abs(a);
+    }
+  }
+
+</script>
+
+</html>
